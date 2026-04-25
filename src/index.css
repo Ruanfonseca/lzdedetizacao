@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 230 60% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 60% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 60% 18%;
+
+    --primary: 240 80% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 96%;
+    --secondary-foreground: 230 60% 22%;
+
+    --muted: 220 40% 96%;
+    --muted-foreground: 230 30% 42%;
+
+    --accent: 220 70% 94%;
+    --accent-foreground: 230 60% 22%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 88%;
+    --input: 220 30% 88%;
+    --ring: 240 80% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 230 60% 18%;
+    --sidebar-primary: 240 80% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 60% 96%;
+    --sidebar-accent-foreground: 230 60% 22%;
+    --sidebar-border: 220 30% 88%;
+    --sidebar-ring: 240 80% 45%;
+
+    /* Custom tokens */
+    --glow: 240 80% 55%;
+    --surface: 220 50% 98%;
+    --surface-alt: 220 60% 97%;
+    --surface-hover: 220 60% 94%;
+    --whatsapp: 142 70% 42%;
+    --whatsapp-foreground: 0 0% 100%;
+    --highlight: 240 70% 50%;
+    --gradient-start: 0 0% 100%;
+    --gradient-end: 220 80% 96%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(230 60% 20% / 0.06);
+    --shadow-md: 0 4px 12px -2px hsl(230 60% 20% / 0.08), 0 2px 4px -2px hsl(230 60% 20% / 0.06);
+    --shadow-lg: 0 10px 25px -5px hsl(230 60% 20% / 0.12), 0 4px 10px -4px hsl(230 60% 20% / 0.08);
+    --shadow-xl: 0 20px 40px -8px hsl(230 60% 20% / 0.15), 0 8px 16px -6px hsl(230 60% 20% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(240 80% 41% / 0.3), 0 0 60px hsl(240 80% 41% / 0.1);
+  }
+
+  .glow-blue-sm {
+    box-shadow: 0 0 10px hsl(240 80% 41% / 0.2);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(240 80% 55%), hsl(240 70% 70%));
+  }
+
+  .bg-gradient-surface {
+    background: linear-gradient(180deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, hsl(240 80% 41% / 0.08) 0%, transparent 70%);
+  }
+
+  .bg-surface-alt {
+    background-color: hsl(var(--surface-alt));
+  }
+
+  .section-padding {
+    @apply px-4 py-12 md:px-8 md:py-16 lg:px-16;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-2xl;
+    box-shadow: var(--shadow-md);
+    border: 1px solid hsl(var(--border));
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary) / 0.4);
+  }
+
+  .card-flat {
+    @apply bg-card rounded-2xl border border-border;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-flat:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: var(--shadow-md);
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-primary px-4 py-1.5 rounded-full;
+    background: hsl(var(--primary) / 0.12);
+    border: 1px solid hsl(var(--primary) / 0.25);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-semibold rounded-xl transition-all duration-300;
+    box-shadow: 0 4px 14px hsl(240 80% 41% / 0.4);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px hsl(240 80% 41% / 0.55);
+    transform: translateY(-1px);
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300;
+    background: hsl(var(--whatsapp));
+    color: hsl(var(--whatsapp-foreground));
+    box-shadow: 0 4px 14px hsl(142 70% 45% / 0.35);
+  }
+
+  .btn-whatsapp:hover {
+    box-shadow: 0 6px 20px hsl(142 70% 45% / 0.5);
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+}

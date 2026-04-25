@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Quanto custa uma dedetização em Campo Grande - RJ?",
     answer:
-      "O tempo de duração do tratamento depende de fatores como tipo de praga, condições do ambiente e nível de infestação. Trabalhamos com soluções eficazes e orientamos o prazo ideal após a avaliação técnica no local.",
+      "O valor varia de acordo com o tipo de praga, tamanho do imóvel e nível de infestação. Fale conosco pelo WhatsApp para uma análise inicial gratuita e agendamento da avaliação presencial.",
   },
   {
     question: "Quanto tempo dura o efeito da descupinização?",

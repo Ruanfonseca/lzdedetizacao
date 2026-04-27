@@ -15,7 +15,7 @@ const faqs = [
   {
     question: "Quanto tempo dura o efeito da descupinização?",
     answer:
-      "O tratamento contra cupins tem efeito prolongado, podendo durar de 3 a 5 anos dependendo do método utilizado. Oferecemos garantia e monitoramento periódico.",
+      "O tempo de duração do tratamento depende de fatores como tipo de praga, condições do ambiente e nível de infestação. Trabalhamos com soluções eficazes e orientamos o prazo ideal após a avaliação técnica no local.",
   },
   {
     question: "É seguro para pets e crianças?",
